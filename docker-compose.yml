@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  mecab:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    command: 'zip -r /opt/mecab-layer.zip /usr/local'
+    volumes:
+      - ./layer:/opt

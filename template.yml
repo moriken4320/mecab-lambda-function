@@ -28,7 +28,7 @@ Resources:
         - python3.8
 
   # Lambda Function
-  MecabFunction:
+  MeCabFunction:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: !Sub ${Env}-${Project}-${LambdaName}
