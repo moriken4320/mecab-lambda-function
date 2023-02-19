@@ -26,3 +26,7 @@ update:
 	echo "-- update ----------------"
 	@make gene-pack
 	aws lambda update-function-code --function-name dev-test-mecab-function --s3-bucket test-mori-python --s3-key deploy_package.zip
+
+exec:
+	echo "-- function exec ----------------"
+	aws lambda invoke --function-name dev-test-mecab-function --payload file://input.json output.json
