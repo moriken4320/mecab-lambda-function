@@ -23,9 +23,9 @@ Resources:
       Description: "Layer for MeCab"
       Content:
         S3Bucket: test-mori-python
-        S3Key: !Sub mecab/layer/${LayerName}.zip
+        S3Key: !Sub mecab/${LayerName}.zip
       CompatibleRuntimes:
-        - python3.9
+        - python3.8
 
   # Lambda Function
   MecabFunction:
@@ -36,8 +36,8 @@ Resources:
       Role: !GetAtt LambdaRole.Arn
       Code:
         S3Bucket: test-mori-python
-        S3Key: mecab/function/lambda_function.zip
-      Runtime: python3.9
+        S3Key: !Sub mecab/${LambdaName}.zip
+      Runtime: python3.8
       Layers:
         - !Ref MeCabLayer
       Timeout: 60
