@@ -1,0 +1,7 @@
+[
+    "Project=test",
+    "Env=dev",
+    "LambdaName=mecab-function",
+    "LayerName=mecab-layer",
+    "AccountId=011262494625"
+]
