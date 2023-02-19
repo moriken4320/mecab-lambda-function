@@ -11,7 +11,7 @@ services:
       - IPADIC_VERSION=2.7.0-20070801
       - LIB_MECAB_DIR_NAME=.mecab
     volumes:
-      - ./library:/var/task
+      - ./function:/var/task
       - ./requirements.txt:/requirements.txt
     command: >
       /bin/sh -c '
