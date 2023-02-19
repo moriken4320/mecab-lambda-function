@@ -12,5 +12,5 @@ rcfile = os.path.join(mecabdir, 'etc/mecabrc')
 def lambda_handler(event, context):
     sentence = event['sentence']
     tagger = MeCab.Tagger('-O{} -d{} -r{}'.format(output_format_type, dicdir, rcfile))
-    parsed_sentence = tagger.parse(sentence)
+    parsed_sentence = tagger.parse(sentence).strip().split()
     return {'result': parsed_sentence}
