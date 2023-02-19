@@ -15,18 +15,6 @@ Parameters:
 
 Resources:
 
-  # Lambda Layer
-  MeCabLayer:
-    Type: AWS::Lambda::LayerVersion
-    Properties:
-      LayerName: !Sub ${Env}-${Project}-${LayerName}
-      Description: "Layer for MeCab"
-      Content:
-        S3Bucket: test-mori-python
-        S3Key: !Sub mecab/${LayerName}.zip
-      CompatibleRuntimes:
-        - python3.8
-
   # Lambda Function
   MeCabFunction:
     Type: AWS::Lambda::Function
@@ -36,10 +24,8 @@ Resources:
       Role: !GetAtt LambdaRole.Arn
       Code:
         S3Bucket: test-mori-python
-        S3Key: !Sub mecab/${LambdaName}.zip
+        S3Key: !Sub deploy_package.zip
       Runtime: python3.8
-      Layers:
-        - !Ref MeCabLayer
       Timeout: 60
       MemorySize: 256
       Environment:
