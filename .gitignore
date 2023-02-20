@@ -1,5 +1,3 @@
-function
-! function/lambda_function.py
-deploy_package.zip
+layers/deploy_package.zip
 outputtemplate.yml
 output.json
