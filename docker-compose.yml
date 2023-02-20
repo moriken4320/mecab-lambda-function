@@ -6,4 +6,4 @@ services:
     volumes:
       - './layers:/home/layers'
     working_dir: '/home/'
-    command: sh -c "pip3 install -r layers/requirements.txt -t python/ && zip -r layers/deploy_package.zip python/"
+    command: sh -c "pip install -r layers/requirements.txt -t python/ && zip -r layers/deploy_package.zip python/"
