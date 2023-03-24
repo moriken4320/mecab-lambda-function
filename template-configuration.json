@@ -3,5 +3,5 @@
     "Env=dev",
     "LambdaName=mecab-function",
     "LayerName=mecab-layer",
-    "AccountId=011262494625"
+    "AccountId=$(aws sts get-caller-identity --query 'Account' --output text)"
 ]
